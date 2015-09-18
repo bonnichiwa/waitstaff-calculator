@@ -34,7 +34,7 @@
       <hr>
       <h3>Subtotal: {{ mealprice + (mealprice * taxpercent/100) | currency }}</h3>
       <h3>Tip: {{ (tippercent/100) * (mealprice + (mealprice * taxpercent/100)) | currency }}</h3>
-      <h3>Total:</h3>
+      <h3>Total: {{ (mealprice + (mealprice * taxpercent/100)) + ((tippercent/100) * (mealprice + (mealprice * taxpercent/100))) | currency }} </h3>
     </div>
 
     <div class="earnings-info">

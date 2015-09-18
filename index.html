@@ -11,38 +11,40 @@
   <script src="js/script.js"></script>
 </head>
 
-<body ng-app="">
+<body ng-app="tipsCalculator">
 
   <header>
     <h1>Waitstaff Calculator</h1>
   </header>
+  
+  <form name="tipsForm" ng-controller="tipsController">
+    <div class="meal-details">
+      <h2>Enter the Meal Details</h2>
+      <hr>
+      <h3>Base Meal Price:</h3>
+      $<input type="number" ng-model="mealprice" placeholder="9.99" />
+      <h3>Tax Rate:</h3>
+      %<input type="number" ng-model="taxpercent" />
+      <h3>Tip Percentage:</h3>
+      %<input type="number" ng-model="tippercent"/>
+    </div>
 
-  <div class="meal-details">
-    <h2>Enter the Meal Details</h2>
-    <hr>
-    <h3>Base Meal Price:</h3>
-    $<input type="number" ng-model="mealprice" placeholder="9.99" />
-    <h3>Tax Rate:</h3>
-    %<input type="number" />
-    <h3>Tip Percentage:</h3>
-    %<input type="number" />
-  </div>
+    <div class="customer-charges">
+      <h2>Customer Charges</h2>
+      <hr>
+      <h3>Subtotal: {{ mealprice + (mealprice * taxpercent/100) | currency }}</h3>
+      <h3>Tip: {{ (tippercent/100) * (mealprice + (mealprice * taxpercent/100)) | currency }}</h3>
+      <h3>Total:</h3>
+    </div>
 
-  <div class="customer-charges">
-    <h2>Customer Charges</h2>
-    <hr>
-    <h3>Subtotal: {{ mealprice | currency }}</h3>
-    <h3>Tip:</h3>
-    <h3>Total:</h3>
-  </div>
-
-  <div class="earnings-info">
-    <h2>My Earnings Info</h2>
-    <hr>
-    <h3>Tip Total:</h3>
-    <h3>Meal Count:</h3>
-    <h3>Average Tip Per Meal:</h3>
-  </div>
+    <div class="earnings-info">
+      <h2>My Earnings Info</h2>
+      <hr>
+      <h3>Tip Total:</h3>
+      <h3>Meal Count:</h3>
+      <h3>Average Tip Per Meal:</h3>
+    </div>
+  </form>
   
 </body>
 </html>

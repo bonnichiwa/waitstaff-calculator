@@ -25,3 +25,21 @@ body {
 .earnings-info {
   float: right;
 }
+
+
+.buttons {
+  text-align: center;
+}
+
+#submit, #cancel {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .75em;
+  margin-top: 2em;
+  background-color: white;
+  padding: 1em;
+  border: 1px solid black;
+}
+
+#submit:hover, #cancel:hover {
+  cursor: pointer;
+}

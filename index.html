@@ -4,13 +4,45 @@
   <meta charset="UTF-8">
   <title>Waitstaff Calculator</title>
 
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 
   <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
   <script src="js/script.js"></script>
 </head>
 
-<body>
+<body ng-app="">
+
+  <header>
+    <h1>Waitstaff Calculator</h1>
+  </header>
+
+  <div class="meal-details">
+    <h2>Enter the Meal Details</h2>
+    <hr>
+    <h3>Base Meal Price:</h3>
+    $<input type="number" ng-model="mealprice" placeholder="9.99" />
+    <h3>Tax Rate:</h3>
+    %<input type="number" />
+    <h3>Tip Percentage:</h3>
+    %<input type="number" />
+  </div>
+
+  <div class="customer-charges">
+    <h2>Customer Charges</h2>
+    <hr>
+    <h3>Subtotal: {{ mealprice | currency }}</h3>
+    <h3>Tip:</h3>
+    <h3>Total:</h3>
+  </div>
+
+  <div class="earnings-info">
+    <h2>My Earnings Info</h2>
+    <hr>
+    <h3>Tip Total:</h3>
+    <h3>Meal Count:</h3>
+    <h3>Average Tip Per Meal:</h3>
+  </div>
   
 </body>
 </html>

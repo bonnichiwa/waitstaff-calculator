@@ -17,29 +17,29 @@
     <h1>Waitstaff Calculator</h1>
   </header>
   
-  <form name="tipsForm" ng-controller="tipsController" ng-submit="submit()">
+  <form name="tipsForm" novalidate ng-controller="tipsController" ng-submit="submit()">
     <div class="meal-details">
       <h2>Enter the Meal Details</h2>
       <hr>
       <h3>Base Meal Price:</h3>
-      $<input type="number" ng-model="mealprice" placeholder="9.99" required min="0" />
+      $<input type="number" ng-model="data.mealprice" placeholder="9.99" required min="0" />
       <h3>Tax Rate:</h3>
-      %<input type="number" ng-model="taxpercent" required min="0" max="100"/>
+      %<input type="number" ng-model="data.taxpercent" required min="0" max="100"/>
       <h3>Tip Percentage:</h3>
-      %<input type="number" ng-model="tippercent" required min="0" max="100"/>
+      %<input type="number" ng-model="data.tippercent" required min="0" max="100"/>
       <br>
       <div class="buttons">
         <input type="submit" value="Submit" id="submit" ng-disabled="tipsForm.$invalid" />
-        <input type="submit" value="Cancel" id="cancel" />
+        <input type="submit" value="Cancel" id="cancel" ng-click="cancel()" />
       </div>
     </div>
 
     <div class="customer-charges">
       <h2>Customer Charges</h2>
       <hr>
-      <h3>Subtotal: {{ mealprice + (mealprice * taxpercent/100) | currency }} </h3>
-      <h3>Tip: {{ (tippercent/100) * (mealprice + (mealprice * taxpercent/100)) | currency }}</h3>
-      <h3>Total: {{ (mealprice + (mealprice * taxpercent/100)) + ((tippercent/100) * (mealprice + (mealprice * taxpercent/100))) | currency }} </h3>
+      <h3>Subtotal: {{ data.mealprice + (data.mealprice * data.taxpercent/100) | currency }} </h3>
+      <h3>Tip: {{ (data.tippercent/100) * (data.mealprice + (data.mealprice * data.taxpercent/100)) | currency }}</h3>
+      <h3>Total: {{ (data.mealprice + (data.mealprice * data.taxpercent/100)) + ((data.tippercent/100) * (data.mealprice + (data.mealprice * data.taxpercent/100))) | currency }} </h3>
     </div>
 
     <div class="earnings-info">

@@ -22,9 +22,12 @@ angular.module('tipsCalculator', [])
     $scope.submit = function() {
       $scope.mealCount += 1;
       console.log("meal count + 1");
-      var addTip = (tipsForm.tippercent/100) * (tipsForm.mealprice + (tipsForm.mealprice * tipsForm.taxpercent/100));
+
+      var addTip = ($scope.data.tippercent/100) * ($scope.data.mealprice + ($scope.data.mealprice * $scope.data.taxpercent/100));
       $scope.tipTotal += addTip
-      console.log("tip total is: addTip");
+      console.log("tip has been added");
+
+      $scope.avgTip = $scope.tipTotal / $scope.mealCount;
 
       $scope.tipsForm.$setPristine();
       $scope.data = angular.copy(mealForm);

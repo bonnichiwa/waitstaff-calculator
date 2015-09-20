@@ -17,7 +17,7 @@
     <h1>Waitstaff Calculator</h1>
   </header>
   
-  <form name="tipsForm" novalidate ng-controller="tipsController" ng-submit="submit()">
+  <form name="tipsForm" novalidate ng-controller="tipsController">
     <div class="meal-details">
       <h2>Enter the Meal Details</h2>
       <hr>
@@ -29,7 +29,7 @@
       %<input type="number" ng-model="data.tippercent" required min="0" max="100"/>
       <br>
       <div class="buttons">
-        <input type="submit" value="Submit" id="submit" ng-disabled="tipsForm.$invalid" />
+        <input type="submit" value="Submit" id="submit" ng-disabled="tipsForm.$invalid" ng-click="submit()" />
         <input type="submit" value="Cancel" id="cancel" ng-click="cancel()" />
       </div>
     </div>

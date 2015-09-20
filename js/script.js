@@ -34,6 +34,12 @@ angular.module('tipsCalculator', [])
       console.log('new entry');
     }
 
-
-
+    $scope.reset = function() {
+      $scope.tipTotal = 0;
+      $scope.mealCount = 0;
+      $scope.avgTip = 0;
+      $scope.tipsForm.$setPristine();
+      $scope.data = angular.copy(mealForm);
+      console.log('resetted');
+    }
   });

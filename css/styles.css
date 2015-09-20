@@ -26,12 +26,11 @@ body {
   float: right;
 }
 
-
 .buttons {
   text-align: center;
 }
 
-#submit, #cancel {
+#submit, #cancel, #reset {
   font-family: 'Montserrat', sans-serif;
   font-size: .75em;
   margin-top: 2em;
@@ -40,6 +39,12 @@ body {
   border: 1px solid black;
 }
 
-#submit:hover, #cancel:hover {
+#submit:hover, #cancel:hover, #reset:hover {
   cursor: pointer;
+}
+
+#reset {
+  float: right;
+  margin-top: 25em;
+  margin-right: -32em;
 }

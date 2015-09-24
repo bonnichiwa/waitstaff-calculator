@@ -23,14 +23,4 @@
       <h3>Total: {{ (data.mealprice + (data.mealprice * data.taxpercent/100)) + ((data.tippercent/100) * (data.mealprice + (data.mealprice * data.taxpercent/100))) | currency }} </h3>
     </div>
 
-    <div class="earnings-info">
-      <h2>My Earnings Info</h2>
-      <hr>
-      <h3>Tip Total: {{ tipTotal | currency }}</h3>
-      <h3>Meal Count: {{ mealCount }}</h3>
-      <h3>Average Tip Per Meal: {{ avgTip | currency }}</h3>
-    </div>
-    
-      <input type="submit" value="Reset" id="reset" ng-click="reset()" />
-
   </form>

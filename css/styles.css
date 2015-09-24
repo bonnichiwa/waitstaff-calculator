@@ -6,7 +6,7 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.header-title {
+header, h4 {
   text-align: center;
 }
 

@@ -2,15 +2,15 @@ angular.module('tipsCalculator', ['ngRoute'])
 
   .config(['$routeProvider' ,function($routeProvider) {
     $routeProvider.when('/', {
-      templateUrl : 'home.html',
+      templateUrl : 'app/home.html',
       controller : 'HomeCtrl'
     })
     .when('/meal', {
-      templateUrl : 'meal.html',
+      templateUrl : 'app/meal.html',
       controller : 'MealCtrl'
     })
-    .when('/earnings' {
-      templateUrl : 'earnings.html',
+    .when('/earnings', {
+      templateUrl : 'app/earnings.html',
       controller : 'EarningCtrl'
     })
   }])

@@ -1,5 +1,4 @@
-<form name="tipsForm" novalidate ng-controller="tipsController">
-<div class="earnings-info">
+<div ng-controller="tipsController" class="earnings-info">
   <h2>My Earnings Info</h2>
   <hr>
   <h3>Tip Total: {{ tipTotal | currency }}</h3>
@@ -9,4 +8,3 @@
 
 <input type="submit" value="Reset" id="reset" ng-click="reset()" />
 
-</form>

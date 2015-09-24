@@ -7,11 +7,11 @@ angular.module('tipsCalculator', ['ngRoute'])
     })
     .when('/meal', {
       templateUrl : 'app/meal.html',
-      controller : 'MealCtrl'
+      controller : 'tipsController'
     })
     .when('/earnings', {
       templateUrl : 'app/earnings.html',
-      controller : 'EarningCtrl'
+      controller : 'tipsController'
     })
   }])
 
@@ -19,13 +19,13 @@ angular.module('tipsCalculator', ['ngRoute'])
     //empty for now
   }])
 
-  .controller('MealCtrl', ['$scope', function($scope) {
-    //empty for now
-  }])
+  // .controller('MealCtrl', ['$scope', function($scope) {
+  //   //empty for now
+  // }])
   
-  .controller('EarningCtrl', ['$scope', function($scope) {
-    //empty for now
-  }])
+  // .controller('EarningCtrl', ['$scope', function($scope) {
+  //   //empty for now
+  // }])
 
   .controller('tipsController', function($scope) {
 

@@ -1,4 +1,5 @@
-angular.module('tipsCalculator', [])
+angular.module('tipsCalculator', ['ngRoute'])
+
   .controller('tipsController', function($scope) {
 
     $scope.tipTotal = 0;

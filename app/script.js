@@ -15,6 +15,18 @@ angular.module('tipsCalculator', ['ngRoute'])
     })
   }])
 
+  .controller('HomeCtrl', ['$scope', function($scope) {
+    //empty for now
+  }])
+
+  .controller('MealCtrl', ['$scope', function($scope) {
+    //empty for now
+  }])
+  
+  .controller('EarningCtrl', ['$scope', function($scope) {
+    //empty for now
+  }])
+
   .controller('tipsController', function($scope) {
 
     $scope.tipTotal = 0;

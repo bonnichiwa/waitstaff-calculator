@@ -1,4 +1,4 @@
-angular.module('tipsCalculator', ['ngRoute'])
+angular.module('tipsCalculator', ['ngRoute', 'ngAnimate'])
 
   .run(function($rootScope, $location, $timeout) {
     $rootScope.$on('$routeChangeError', function() {

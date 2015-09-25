@@ -50,17 +50,18 @@ angular.module('tipsCalculator', ['ngRoute', 'ngAnimate'])
     $scope.mealCount = 0;
     $scope.avgTip = 0;
 
-    var mealForm = {
-      mealprice : "",
-      taxpercent : "",
-      tippercent : "",
-    }
+    // var mealForm = {
+    //   mealprice : "",
+    //   taxpercent : "",
+    //   tippercent : "",
+    // }
 
-    $scope.data = angular.copy(mealForm);
+    // $scope.data = angular.copy(mealForm);
 
     $scope.cancel = function() {
-      $scope.tipsForm.$setPristine();
-      $scope.data = angular.copy(mealForm);
+      $scope.data.tippercent = "";
+      $scope.data.mealprice = "";
+      $scope.data.taxpercent = "";
       console.log('empty');
     }
 
@@ -74,9 +75,6 @@ angular.module('tipsCalculator', ['ngRoute', 'ngAnimate'])
 
       $scope.avgTip = $scope.tipTotal / $scope.mealCount;
 
-      $scope.tipsForm.$setPristine();
-      $scope.data = angular.copy(mealForm);
-
       $scope.data.tippercent = "";
       $scope.data.mealprice = "";
       $scope.data.taxpercent = "";
@@ -87,8 +85,9 @@ angular.module('tipsCalculator', ['ngRoute', 'ngAnimate'])
       $scope.tipTotal = 0;
       $scope.mealCount = 0;
       $scope.avgTip = 0;
-      $scope.tipsForm.$setPristine();
-      $scope.data = angular.copy(mealForm);
+      $scope.data.tippercent = "";
+      $scope.data.mealprice = "";
+      $scope.data.taxpercent = "";
       console.log('resetted');
     }
   });

@@ -1,5 +1,19 @@
 angular.module('tipsCalculator', ['ngRoute'])
 
+  .run(function($rootScope, $location, $timeout) {
+    $rootScope.$on('$routeChangeError', function() {
+        $location.path("/error");
+    });
+    $rootScope.$on('$routeChangeStart', function() {
+        $rootScope.isLoading = true;
+    });
+    $rootScope.$on('$routeChangeSuccess', function() {
+      $timeout(function() {
+        $rootScope.isLoading = false;
+      }, 1000);
+    });
+  })
+
   .config(['$routeProvider' ,function($routeProvider) {
     $routeProvider.when('/', {
       templateUrl : 'app/home.html',
@@ -12,6 +26,9 @@ angular.module('tipsCalculator', ['ngRoute'])
     .when('/earnings', {
       templateUrl : 'app/earnings.html',
       controller : 'tipsController'
+    })
+    .when('/error', {
+      template : '<h4>Error - Page Not Found</h4>'
     })
   }])
 

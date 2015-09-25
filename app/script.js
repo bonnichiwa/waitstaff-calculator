@@ -50,13 +50,13 @@ angular.module('tipsCalculator', ['ngRoute', 'ngAnimate'])
     $scope.mealCount = 0;
     $scope.avgTip = 0;
 
-    // var mealForm = {
-    //   mealprice : "",
-    //   taxpercent : "",
-    //   tippercent : "",
-    // }
+    var mealForm = {
+      mealprice : "",
+      taxpercent : "",
+      tippercent : "",
+    }
 
-    // $scope.data = angular.copy(mealForm);
+    $scope.data = angular.copy(mealForm);
 
     $scope.cancel = function() {
       $scope.data.tippercent = "";

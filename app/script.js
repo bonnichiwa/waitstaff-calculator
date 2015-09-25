@@ -20,12 +20,12 @@ angular.module('tipsCalculator', ['ngRoute', 'ngAnimate'])
       controller : 'HomeCtrl'
     })
     .when('/meal', {
-      templateUrl : 'app/meal.html',
-      controller : 'tipsController'
+      templateUrl : 'app/meal.html'
+      // controller : 'tipsController'
     })
     .when('/earnings', {
-      templateUrl : 'app/earnings.html',
-      controller : 'tipsController'
+      templateUrl : 'app/earnings.html'
+      // controller : 'tipsController'
     })
     .when('/error', {
       template : '<h4>Error - Page Not Found</h4>'
@@ -76,6 +76,10 @@ angular.module('tipsCalculator', ['ngRoute', 'ngAnimate'])
 
       $scope.tipsForm.$setPristine();
       $scope.data = angular.copy(mealForm);
+
+      $scope.data.tippercent = "";
+      $scope.data.mealprice = "";
+      $scope.data.taxpercent = "";
       console.log('new entry');
     }
 
